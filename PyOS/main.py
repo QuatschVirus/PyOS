@@ -114,7 +114,8 @@ for bootloaded in bootload:
     print(f'Loading library {bootloaded}')
     try:
         lib = __import__(bootloaded)
-        commands.update(lib.commands)
+        for command_load in lib.commands.keys():
+            commands[f'{bootloaded}.{command_load}'] = lib.commands[command_load]
         libs[bootloaded] = lib
     except ModuleNotFoundError:
         error('ModuleNotFound', f'bootload {bootloaded}', 'BootLibLoader', f'The library {bootloaded} was not found', 'Move it into the subfolder libs')

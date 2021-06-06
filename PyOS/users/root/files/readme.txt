@@ -1,0 +1,1 @@
+This is an example file the user can open at his main file path

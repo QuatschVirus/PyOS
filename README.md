@@ -33,4 +33,5 @@ Install the variant you selected. You can do one of the following:
 
 #### Install via the executable files
 You can install it with the shell files provided as the bin files in a release or out of the `downloads/installer` folder.
-This includes shell (sh) and batch (bat) scripts, and even a Windows Executable Installer (exe).
+Currently, only a Windows Executable Installer (exe) is available, but more options will eventually be added soon.
+
