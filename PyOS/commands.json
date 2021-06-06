@@ -1,0 +1,6 @@
+{
+  "help" : "Shows this message",
+  "info" : "Displays information about your system",
+  "exit" : "Closes the Virtual Machine",
+  "py" : "works just like the normal cmd "
+}
