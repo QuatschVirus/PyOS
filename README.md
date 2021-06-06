@@ -34,8 +34,7 @@ Install the variant you selected. You can do one of the following:
 #### Install via the shell files
 You can install it with the shell files provided as the bin files in a release or out of the `downloads/installer` folder.
 
-1. Download the script:
-  - Linux:
+- Linux:
     1. Open a terminal window
     2. Navigate to the directory you want to install the system using `cd`
     3. Download the sh-script for your release/variant. Well use `YourVersion.sh` as a placeholder. Make sure to replace with your desired one. The formatting is `PyOS-[verison identifier]-[variant].sh`. Do this with wget (or curl): `wget https://github.com/QuatschVirus/PyOS`...
