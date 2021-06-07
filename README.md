@@ -14,7 +14,7 @@ If you want to install this, follow these guidelines. Choose what's best for you
 This comes in different variants for you to download. You can find them in the folder "Downloads". You're best to go with choosing one of the folowing variants:
 
 #### Lite
-The lite variant only includes the basic runtime (the folder "PyOS" as given). If you just want to, for example, get an example of command processing, I will recommend you this variants
+The lite variant only includes the basic runtime (the folder "PyOS" as given). If you just want to, for example, get an example of command processing, I will recommend you this variant
 
 #### Recommended
 This variant includes the folder "PyOS" with some libraries installed, for example [...]. Suggested for normal users.
@@ -33,5 +33,13 @@ Install the variant you selected. You can do one of the following:
 
 #### Install via the executable files
 You can install it with the shell files provided as the bin files in a release or out of the `downloads/installer` folder.
-Currently, only a Windows Executable Installer (exe) is available, but more options will eventually be added soon.
+Currently, a Windows Executable Installer (exe), a batch file (bat) and a shell script (sh, not tested) are available, but more options will eventually be added soon.
+Just run a bin file, and it should install everything correctly.
 
+#### Install by downloading and decompressing the archives
+You can alternatively download and decompress the archives directly. It's basically the exact same process the bin files run automatically.
+You can download them per Browser, or with wget: `wget https://github.com/QuatschVirus/PyOS/raw/main/download/Archives/[your desired archive name here]`
+Then, just decompress them, for example with tar: `tar -xvzf [your desired archive name here]`
+Note, that the libs folder contains a file called `placeholder`. Make sure to delete it afterwards:
+- Windows: `del libs/placeholer`
+- Unix (Linux etc.): `rm ./libs/placeholder`

@@ -11,13 +11,15 @@ logins = dict()
 logged_in = str()
 
 
-def error(error_type: str, error_line: str, error_raiser: str, error_msg: str, error_solver=''):
+def error(error_type: str, error_line: str, error_raiser: str, error_msg: str, error_solver='', stop=False):
     print(f'''{Fore.RED}---ERROR---
 An error occurred
 UserInput: "{error_line}"
 {error_raiser}.{error_type}: {error_msg}
 Possible Solvings: {error_solver}
 ---ERROR---{Fore.RESET}''')
+    if stop is True:
+        sys.exit('ERROR')
 
 
 class Commands:
