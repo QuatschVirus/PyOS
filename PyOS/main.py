@@ -65,11 +65,12 @@ class Commands:
 
 def process_command(command: str):
     command_parsed = command.split(' ')
-    if command not in commands.keys() or command not in aliases.keys():
+    if command_parsed[0] not in commands.keys() and command_parsed[0] not in aliases.keys():
         error('CommandNotFound', '§' + command, 'CommandProcessor', f'Command "{command_parsed[0]}" was not found.',
               'Use help')
     elif command in aliases.keys():
         commands[aliases[command_parsed[0]]](command_parsed, command=command, user=logged_in, alias=aliases[command_parsed[0]])
+    else:
         commands[command_parsed[0]](command_parsed, command=command, user=logged_in)
 
 
@@ -99,6 +100,7 @@ def login():
     logged_in = user
 
 
+os.system('title PyOS')
 print('Starting PyOS Virtual Machine...')
 print('Indexing built-in commands...')
 built_ins = {
@@ -108,6 +110,8 @@ built_ins = {
     'py': Commands.py
 }
 commands.update(built_ins)
+if 'dev' in sys.argv:
+    print(commands.keys())
 print('Collecting, loading and indexing libraries...')
 with open(os.path.abspath('loadlist.txt')) as f1:
     bootload = f1.readlines()
