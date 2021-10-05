@@ -1,6 +1,7 @@
 import sys, os, platform, time, json, yaml
 from colorama import init, Fore
 from psutil import virtual_memory
+from osplus import Configs
 
 init(convert=True)
 
@@ -9,6 +10,8 @@ aliases = dict()
 libs = dict()
 logins = dict()
 logged_in = str()
+
+config = Configs.YAML("settings.yml")
 
 
 def error(error_type: str, error_line: str, error_raiser: str, error_msg: str, error_solver='', stop=False):
@@ -128,11 +131,9 @@ for bootloaded in bootload:
     except TypeError or AttributeError:
         error('LibLoadError', f'Index commands from {bootloaded}', 'BootLibLoader', f'The commands from {bootloaded} couldn\'t be resloved correctly', 'Refer to GitHub for setting up own libraries')
 print('Loading and indexing aliases for commands')
-with open(os.path.abspath('aliases.yml')) as f:
-    aliases = yaml.load(f, Loader=yaml.FullLoader)
+aliases = config.get("commands")["shortcuts"]
 print('Collecting, loading and indexing logins')
-with open(os.path.abspath('users/logins.yml')) as f:
-    logins = yaml.load(f, Loader=yaml.FullLoader)
+logins = config.get("logins")
 print('Login to proceed:')
 login()
 os.system(f'cd ./users/{logged_in}/files')

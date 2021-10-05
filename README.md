@@ -33,8 +33,13 @@ Install the variant you selected. You can do one of the following:
 
 #### Install via the executable files
 You can install it with the shell files provided as the bin files in a release or out of the `downloads/installer` folder.
-Currently, a Windows Executable Installer (exe), a batch file (bat) and a shell script (sh, not tested) are available, but more options will eventually be added soon.
-Just run a bin file, and it should install everything correctly.
+Currently, a batch file (bat) and a shell script (sh, not tested) are available, but more options will eventually be added soon.
+
+These have some dependencies they need to work:
+- Batch: curl (try `curl --version` in command line to test if it's installed, otherwise install it from [here](https://curl.se/windows/))
+- Shell Script: tar and wget (should be preinstalled on linux systems, otherwise installe with apt: `sudo apt install tar` and `sudo apt install wget`)
+
+Just run any installation file, and it should install everything correctly, if it's supported on your system.
 
 #### Install by downloading and decompressing the archives
 You can alternatively download and decompress the archives directly. It's basically the exact same process the bin files run automatically.
