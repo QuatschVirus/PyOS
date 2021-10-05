@@ -114,7 +114,7 @@ built_ins = {
 }
 commands.update(built_ins)
 if 'dev' in sys.argv:
-    print(commands.keys())
+    print(commands)
 print('Collecting, loading and indexing libraries...')
 with open(os.path.abspath('loadlist.txt')) as f1:
     bootload = f1.readlines()
@@ -131,9 +131,11 @@ for bootloaded in bootload:
     except TypeError or AttributeError:
         error('LibLoadError', f'Index commands from {bootloaded}', 'BootLibLoader', f'The commands from {bootloaded} couldn\'t be resloved correctly', 'Refer to GitHub for setting up own libraries')
 print('Loading and indexing aliases for commands')
-aliases = config.get("commands")["shortcuts"]
+with open("aliases.yml") as f:
+    aliases = yaml.load(f, yaml.FullLoader)
 print('Collecting, loading and indexing logins')
-logins = config.get("logins")
+with open("./users/logins.yml") as f:
+    logins = yaml.load(f, yaml.FullLoader)
 print('Login to proceed:')
 login()
 os.system(f'cd ./users/{logged_in}/files')
